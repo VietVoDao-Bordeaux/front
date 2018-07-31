@@ -1,0 +1,94 @@
+/* # Suppresion de l’unité
+- `$smash-number` : variable (avec ou sans unité) passée en paramètre ;
+- `@return` : variable sans unité retournée.
+*/
+
+@function strip-unit($smash-number) {
+  @return $smash-number / ($smash-number * 0 + 1);
+}
+
+/* # Conversion de pixels en ems
+- `$smash-px` : variable en pixels passée en paramètre ;
+- `$smash-contexte` : contexte de travail en pixels (par défaut égal à la taille de texte du projet) ;
+- `@return` : équivalence en `ems` retournée.
+*/
+
+@function em($smash-px, $smash-contexte: $base-font-size) {
+  @return(strip-unit($smash-px) / strip-unit($smash-contexte) * 1em);
+}
+
+/* # Conversion de pixels en rems */
+
+/*
+ - `$smash-px` : variable en pixels passée en paramètre ;
+ - `$smash-bfs` : contexte de travail égal à la taille de texte du navigateur par défaut ;
+ - Pour les navigateurs modernes. `@return` : équivalence en `rems` retournée.
+ - Pour IE 8 et inférieurs. `@return` : équivalence en pixels retournée.
+*/
+
+@function rem($smash-px) {
+  @if $is-rem {
+    @return(strip-unit($smash-px) / strip-unit($base-font-size) * 1rem);
+  }
+
+  @else {
+    @return(strip-unit($smash-px) * 1px);
+  }
+}
+
+// Convertir de pixels en pourcentages
+
+/*
+ - `$smash-px` : variable en pixels passée en paramètre ;
+ - `$smash-contexte` : contexte de travail en pixels (par défaut égal à la largeur du conteneur principal) ;
+ - `@return` : équivalence en pourcentage retournée.
+*/
+
+@function pourcent($smash-px, $smash-contexte) {
+  @return(strip-unit($smash-px) * 100 / strip-unit($smash-contexte) * 1%);
+}
+
+/* # Calcul de taille dans l’unité de son choix */
+
+/*
+ - `$smash-px` : variable en pixels passée en paramètre ;
+ - `$smash-contexte` : contexte de travail en pixels (par défaut égal à la taille de texte du projet) ;
+ - `$smash-unit` : unité choisie (par défaut égale à l’unité préférée du projet) ;
+*/
+
+/*
+ - Retourne une taille en `em`, en `rem`, en `pt`, en `%` ou en `px` en fonction de `$smash-unit`.
+*/
+
+@function size($smash-px, $smash-unit: $prefered-unit, $smash-contexte: $base-font-size) {
+  @if $smash-unit == 'em' {
+    @return em($smash-px, $smash-contexte);
+  }
+
+  @elseif $smash-unit == 'rem' {
+    @return rem($smash-px);
+  }
+
+  @else {
+    @return $smash-px;
+  }
+}
+
+/* # Calculer le nombre de lignes nécessaires
+
+ - `$smash-font-size` : taille du texte en pixels passée en paramètre ;
+ - `$smash-line-height` : hauteur de ligne ;
+ - `$smash-gap` : gap minimum entre la hauteur de ligne et la taille de texte : s’il n’est pas respecté, le nombre de ligne se voit augmenté de 0.5 ;
+ - `@return` : nombre de lignes nécessaires pour afficher.
+*/
+
+@function lines($font-size: $base-font-size, $line-height: $base-line-height) {
+  $lines: ceil(2 * $font-size / $line-height) / 2;
+  $gap: 2px;
+
+  @if ($lines * $line-height - $font-size) < $gap {
+    $smash-lines: $lines + 0.5;
+  }
+
+  @return $lines;
+}
