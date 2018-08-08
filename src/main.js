@@ -4,6 +4,7 @@
 /**
  * Import Global Style (.css/.scss)
  */
+import 'bootstrap/scss/bootstrap.scss'
 import './assets/scss/index.scss'
 
 import Vue from 'vue'
@@ -13,6 +14,7 @@ import ApolloClient from 'apollo-client'
 import { HttpLink } from 'apollo-link-http'
 import { InMemoryCache } from 'apollo-cache-inmemory'
 import VueApollo from 'vue-apollo'
+import Paragraphs from './components/paragraph/Paragraphs.vue'
 
 Vue.config.productionTip = false
 
@@ -67,12 +69,15 @@ const apolloProvider = new VueApollo({
 // Install the vue plugin
 Vue.use(VueApollo)
 
+// Declare generic component
+let paragraphComponent = Vue.component('paragraphs', Paragraphs)
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
   provide: apolloProvider.provide(),
   apollo: {},
-  components: { App },
+  components: { App, paragraphComponent },
   template: '<App/>'
 })

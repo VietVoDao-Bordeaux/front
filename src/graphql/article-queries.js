@@ -26,6 +26,36 @@ query getArticle($id: String = "1") {
     body {
       processed
       format
+    },
+    fieldParagraphs {
+      entity {
+        ... on ParagraphTextWithIcons {
+          type {
+            targetId
+          },
+          fieldLeftContent {
+            processed
+          },
+          fieldRightContent {
+            entity {
+              type {
+                targetId
+              },
+              fieldTitle,
+              fieldDesc,
+              fieldIcon {
+                entity {
+                  fieldSvg {
+                    entity {
+                      url
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 }

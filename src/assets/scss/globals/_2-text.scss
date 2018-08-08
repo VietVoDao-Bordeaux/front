@@ -1,0 +1,3 @@
+$text-size-map: ('extra-small': rem($text-extra-small-fs), 'small': rem($text-small-fs), 'base' : rem($base-font-size), 'big' : rem($text-big-fs), 'extra-big': rem($text-extra-big-fs));
+
+@include responsive-properties-map('text', font-size, $text-size-map);
