@@ -3,13 +3,9 @@
         <article-title v-bind:title="nodeById.title"></article-title>
 
         <div class="container pt-4">
+            <div class="contribution" v-if="nodeById && nodeById.body" v-html="nodeById.body.processed"></div>
+
             <paragraphs v-bind:paragraphs="nodeById.fieldParagraphs"></paragraphs>
-
-            <!-- <div v-if="nodeById.fieldParagraphs" v-for="paragraph in nodeById.fieldParagraphs" :key="paragraph.targetId">
-                <div v-if="paragraph.entity.fieldLeftContent" v-html="paragraph.entity.fieldLeftContent.processed"></div>
-            </div> -->
-
-            <!--<div class="contribution" v-if="nodeById && nodeById.body" v-html="nodeById.body.processed"></div>-->
         </div>
     </div>
 </template>

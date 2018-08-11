@@ -1,0 +1,741 @@
+{
+    "__schema": {
+    "types": [
+        {
+        "kind": "OBJECT",
+        "name": "QueryRoot",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "Language",
+        "possibleTypes": null
+        },
+        {
+        "kind": "SCALAR",
+        "name": "String",
+        "possibleTypes": null
+        },
+        {
+        "kind": "SCALAR",
+        "name": "Int",
+        "possibleTypes": null
+        },
+        {
+        "kind": "SCALAR",
+        "name": "Boolean",
+        "possibleTypes": null
+        },
+        {
+        "kind": "INTERFACE",
+        "name": "Node",
+        "possibleTypes": [
+            {
+            "name": "NodeActualite"
+            },
+            {
+            "name": "NodeArticle"
+            },
+            {
+            "name": "NodeIcons"
+            }
+        ]
+        },
+        {
+        "kind": "ENUM",
+        "name": "LanguageId",
+        "possibleTypes": null
+        },
+        {
+        "kind": "INTERFACE",
+        "name": "Entity",
+        "possibleTypes": [
+            {
+            "name": "User"
+            },
+            {
+            "name": "File"
+            },
+            {
+            "name": "Consumer"
+            },
+            {
+            "name": "NodeActualite"
+            },
+            {
+            "name": "NodeArticle"
+            },
+            {
+            "name": "NodeIcons"
+            },
+            {
+            "name": "Oauth2TokenAccessToken"
+            },
+            {
+            "name": "Oauth2TokenAuthCode"
+            },
+            {
+            "name": "Oauth2TokenRefreshToken"
+            },
+            {
+            "name": "MenuLinkContentMenuLinkContent"
+            },
+            {
+            "name": "ParagraphIconBlock"
+            },
+            {
+            "name": "ParagraphTextWithIcons"
+            },
+            {
+            "name": "ParagraphTimeline"
+            },
+            {
+            "name": "ParagraphTimelineChild"
+            },
+            {
+            "name": "UnexposedEntity"
+            }
+        ]
+        },
+        {
+        "kind": "INTERFACE",
+        "name": "Url",
+        "possibleTypes": [
+            {
+            "name": "EntityCanonicalUrl"
+            },
+            {
+            "name": "DefaultInternalUrl"
+            },
+            {
+            "name": "ExternalUrl"
+            }
+        ]
+        },
+        {
+        "kind": "INPUT_OBJECT",
+        "name": "EntityQueryFilterInput",
+        "possibleTypes": null
+        },
+        {
+        "kind": "INPUT_OBJECT",
+        "name": "EntityQueryFilterConditionInput",
+        "possibleTypes": null
+        },
+        {
+        "kind": "ENUM",
+        "name": "QueryOperator",
+        "possibleTypes": null
+        },
+        {
+        "kind": "ENUM",
+        "name": "QueryConjunction",
+        "possibleTypes": null
+        },
+        {
+        "kind": "INPUT_OBJECT",
+        "name": "EntityQuerySortInput",
+        "possibleTypes": null
+        },
+        {
+        "kind": "ENUM",
+        "name": "SortOrder",
+        "possibleTypes": null
+        },
+        {
+        "kind": "ENUM",
+        "name": "EntityQueryRevisionMode",
+        "possibleTypes": null
+        },
+        {
+        "kind": "ENUM",
+        "name": "EntityQueryBundleMode",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "EntityQueryResult",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "User",
+        "possibleTypes": null
+        },
+        {
+        "kind": "INTERFACE",
+        "name": "EntityRevisionable",
+        "possibleTypes": [
+            {
+            "name": "User"
+            },
+            {
+            "name": "File"
+            },
+            {
+            "name": "Consumer"
+            },
+            {
+            "name": "NodeActualite"
+            },
+            {
+            "name": "NodeArticle"
+            },
+            {
+            "name": "NodeIcons"
+            },
+            {
+            "name": "Oauth2TokenAccessToken"
+            },
+            {
+            "name": "Oauth2TokenAuthCode"
+            },
+            {
+            "name": "Oauth2TokenRefreshToken"
+            },
+            {
+            "name": "MenuLinkContentMenuLinkContent"
+            },
+            {
+            "name": "ParagraphIconBlock"
+            },
+            {
+            "name": "ParagraphTextWithIcons"
+            },
+            {
+            "name": "ParagraphTimeline"
+            },
+            {
+            "name": "ParagraphTimelineChild"
+            }
+        ]
+        },
+        {
+        "kind": "OBJECT",
+        "name": "FieldUserLangcode",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "FieldUserPreferredLangcode",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "FieldUserPreferredAdminLangcode",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "FieldUserPass",
+        "possibleTypes": null
+        },
+        {
+        "kind": "SCALAR",
+        "name": "Timestamp",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "FieldUserRoles",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "FieldNodeLangcode",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "FieldNodeType",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "FieldNodeRevisionUid",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "FieldNodeUid",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "FieldNodeBody",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "FieldNodeFieldParagraphs",
+        "possibleTypes": null
+        },
+        {
+        "kind": "INTERFACE",
+        "name": "Paragraph",
+        "possibleTypes": [
+            {
+            "name": "ParagraphIconBlock"
+            },
+            {
+            "name": "ParagraphTextWithIcons"
+            },
+            {
+            "name": "ParagraphTimeline"
+            },
+            {
+            "name": "ParagraphTimelineChild"
+            }
+        ]
+        },
+        {
+        "kind": "OBJECT",
+        "name": "FieldParagraphLangcode",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "FieldParagraphType",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "FieldParagraphUid",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "FieldParagraphRevisionUid",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "FieldParagraphFieldBody",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "FieldParagraphFieldChild",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "FieldParagraphFieldIcon",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "FieldParagraphFieldLeftContent",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "FieldParagraphFieldRightContent",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "FieldNodeFieldSvg",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "File",
+        "possibleTypes": null
+        },
+        {
+        "kind": "INTERFACE",
+        "name": "EntityOwnable",
+        "possibleTypes": [
+            {
+            "name": "File"
+            },
+            {
+            "name": "NodeActualite"
+            },
+            {
+            "name": "NodeArticle"
+            },
+            {
+            "name": "NodeIcons"
+            },
+            {
+            "name": "ParagraphIconBlock"
+            },
+            {
+            "name": "ParagraphTextWithIcons"
+            },
+            {
+            "name": "ParagraphTimeline"
+            },
+            {
+            "name": "ParagraphTimelineChild"
+            }
+        ]
+        },
+        {
+        "kind": "OBJECT",
+        "name": "FieldFileLangcode",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "FieldFileUid",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "FieldFileUri",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "Menu",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "MenuLink",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "Consumer",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "FieldConsumerOwnerId",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "FieldConsumerImage",
+        "possibleTypes": null
+        },
+        {
+        "kind": "ENUM",
+        "name": "ImageStyleId",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "ImageResource",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "FieldConsumerSecret",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "FieldConsumerRoles",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "FieldConsumerUserId",
+        "possibleTypes": null
+        },
+        {
+        "kind": "INTERFACE",
+        "name": "Oauth2Token",
+        "possibleTypes": [
+            {
+            "name": "Oauth2TokenAccessToken"
+            },
+            {
+            "name": "Oauth2TokenAuthCode"
+            },
+            {
+            "name": "Oauth2TokenRefreshToken"
+            }
+        ]
+        },
+        {
+        "kind": "OBJECT",
+        "name": "FieldOauth2TokenBundle",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "FieldOauth2TokenAuthUserId",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "FieldOauth2TokenClient",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "FieldOauth2TokenScopes",
+        "possibleTypes": null
+        },
+        {
+        "kind": "INTERFACE",
+        "name": "MenuLinkContent",
+        "possibleTypes": [
+            {
+            "name": "MenuLinkContentMenuLinkContent"
+            }
+        ]
+        },
+        {
+        "kind": "OBJECT",
+        "name": "FieldMenuLinkContentLangcode",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "FieldMenuLinkContentLink",
+        "possibleTypes": null
+        },
+        {
+        "kind": "SCALAR",
+        "name": "Map",
+        "possibleTypes": null
+        },
+        {
+        "kind": "SCALAR",
+        "name": "ID",
+        "possibleTypes": null
+        },
+        {
+        "kind": "SCALAR",
+        "name": "Float",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "__Schema",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "__Type",
+        "possibleTypes": null
+        },
+        {
+        "kind": "ENUM",
+        "name": "__TypeKind",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "__Field",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "__InputValue",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "__EnumValue",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "__Directive",
+        "possibleTypes": null
+        },
+        {
+        "kind": "ENUM",
+        "name": "__DirectiveLocation",
+        "possibleTypes": null
+        },
+        {
+        "kind": "INTERFACE",
+        "name": "EntityPublishable",
+        "possibleTypes": [
+            {
+            "name": "NodeActualite"
+            },
+            {
+            "name": "NodeArticle"
+            },
+            {
+            "name": "NodeIcons"
+            },
+            {
+            "name": "ParagraphIconBlock"
+            },
+            {
+            "name": "ParagraphTextWithIcons"
+            },
+            {
+            "name": "ParagraphTimeline"
+            },
+            {
+            "name": "ParagraphTimelineChild"
+            }
+        ]
+        },
+        {
+        "kind": "INTERFACE",
+        "name": "EntityDescribable",
+        "possibleTypes": []
+        },
+        {
+        "kind": "INTERFACE",
+        "name": "InternalUrl",
+        "possibleTypes": [
+            {
+            "name": "EntityCanonicalUrl"
+            },
+            {
+            "name": "DefaultInternalUrl"
+            }
+        ]
+        },
+        {
+        "kind": "OBJECT",
+        "name": "LanguageSwitchLink",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "Link",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "InternalResponse",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "NodeActualite",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "NodeArticle",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "NodeIcons",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "Oauth2TokenAccessToken",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "Oauth2TokenAuthCode",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "Oauth2TokenRefreshToken",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "MenuLinkContentMenuLinkContent",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "ParagraphIconBlock",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "ParagraphTextWithIcons",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "ParagraphTimeline",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "ParagraphTimelineChild",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "EntityCanonicalUrl",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "UnexposedEntity",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "DefaultInternalUrl",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "ExternalResponse",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "ExternalUrl",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "ConstraintViolation",
+        "possibleTypes": null
+        },
+        {
+        "kind": "OBJECT",
+        "name": "EntityCrudOutput",
+        "possibleTypes": null
+        },
+        {
+        "kind": "SCALAR",
+        "name": "Upload",
+        "possibleTypes": null
+        },
+        {
+        "kind": "SCALAR",
+        "name": "DateTimeTz",
+        "possibleTypes": null
+        },
+        {
+        "kind": "SCALAR",
+        "name": "Date",
+        "possibleTypes": null
+        },
+        {
+        "kind": "SCALAR",
+        "name": "DateTime",
+        "possibleTypes": null
+        },
+        {
+        "kind": "SCALAR",
+        "name": "Any",
+        "possibleTypes": null
+        },
+        {
+        "kind": "ENUM",
+        "name": "NodeDisplayModeId",
+        "possibleTypes": null
+        },
+        {
+        "kind": "ENUM",
+        "name": "ParagraphDisplayModeId",
+        "possibleTypes": null
+        },
+        {
+        "kind": "ENUM",
+        "name": "UserDisplayModeId",
+        "possibleTypes": null
+        }
+      ]
+    }
+}

@@ -1,0 +1,46 @@
+/*
+Colors
+*/
+.c {
+  &-primary {
+    color: $c-theme-primary;
+  }
+
+  &-secondary {
+    color: $c-theme-secondary;
+  }
+
+  &-tertiary {
+    color: $c-theme-tertiary;
+  }
+
+  &-black {
+    color: $black;
+  }
+
+  &-white {
+    color: $white;
+  }
+
+  &-text-light {
+    color: $c-text-light;
+  }
+
+  &-text-light-2 {
+    color: $c-text-light-2;
+  }
+
+  &-text-dark {
+    color: $c-text-darker;
+  }
+
+  &-border {
+    color: $c-border;
+  }
+}
+
+[class*="c-"] {
+  strong {
+    color: inherit;
+  }
+}

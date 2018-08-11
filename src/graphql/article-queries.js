@@ -42,7 +42,10 @@ query getArticle($id: String = "1") {
                 targetId
               },
               fieldTitle,
-              fieldDesc,
+              fieldBody {
+                format
+                processed
+              },
               fieldIcon {
                 entity {
                   fieldSvg {
@@ -52,6 +55,22 @@ query getArticle($id: String = "1") {
                   }
                 }
               }
+            }
+          }
+        },
+        ... on ParagraphTimeline {
+          type {
+            targetId
+          },
+          fieldChild {
+            entity {
+              fieldTitle,
+              fieldBody {
+                processed,
+                format
+              },
+              fieldDate,
+              fieldDateEnd
             }
           }
         }

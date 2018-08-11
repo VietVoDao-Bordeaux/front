@@ -12,7 +12,8 @@ import App from './App'
 import router from './router'
 import ApolloClient from 'apollo-client'
 import { HttpLink } from 'apollo-link-http'
-import { InMemoryCache } from 'apollo-cache-inmemory'
+import { InMemoryCache, IntrospectionFragmentMatcher } from 'apollo-cache-inmemory'
+import introspectionQueryResultData from './graphql/fragmentTypes.json'
 import VueApollo from 'vue-apollo'
 import Paragraphs from './components/paragraph/Paragraphs.vue'
 
@@ -37,10 +38,14 @@ const authLink = setContext((_, { headers }) => {
 })
 */
 
+const fragmentMatcher = new IntrospectionFragmentMatcher({
+  introspectionQueryResultData
+})
+
 // Create the apollo client
 const apolloClient = new ApolloClient({
   link: httpLink,
-  cache: new InMemoryCache(),
+  cache: new InMemoryCache({fragmentMatcher}),
   connectToDevTools: true
 })
 
