@@ -59,6 +59,7 @@ query getArticle($id: String = "1") {
           }
         },
         ... on ParagraphTimeline {
+          id,
           type {
             targetId
           },
