@@ -27,6 +27,14 @@ query getArticle($id: String = "1") {
       processed
       format
     },
+    fieldFullImage {
+      targetId
+      alt
+      title
+      width
+      height
+      url
+    },
     fieldParagraphs {
       entity {
         ... on ParagraphTextWithIcons {

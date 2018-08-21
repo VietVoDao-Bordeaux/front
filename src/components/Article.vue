@@ -1,9 +1,13 @@
 <template>
     <div>
-        <article-title v-bind:title="nodeById.title"></article-title>
+        <article-title v-bind:title="nodeById.title" v-bind:image="nodeById.fieldFullImage"></article-title>
 
         <div class="container pt-4">
-            <div class="contribution" v-if="nodeById && nodeById.body" v-html="nodeById.body.processed"></div>
+            <div class="row justify-content-center">
+                <div class="col-8">
+                    <div class="contribution" v-if="nodeById && nodeById.body" v-html="nodeById.body.processed"></div>
+                </div>
+            </div>
 
             <paragraphs v-bind:paragraphs="nodeById.fieldParagraphs"></paragraphs>
         </div>

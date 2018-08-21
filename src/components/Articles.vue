@@ -4,7 +4,7 @@
 
         <div v-if="$apollo.loading">Loading...</div>
 
-        <div v-for="entity in nodeQuery.entities" :key="entity.nid">
+        <div v-if="nodeQuery && nodeQuery.entities" v-for="entity in nodeQuery.entities" :key="entity.nid">
             <p>
                 <router-link :to="{ name: 'Article', params: {id: entity.nid}}" >{{ entity.title }}</router-link>
             </p>

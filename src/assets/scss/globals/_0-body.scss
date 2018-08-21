@@ -1,9 +1,22 @@
 body {
   font-family: 'Montserrat', Arial, sans-serif;
+  background: $c-background;
+  color: $c-text;
 }
 
 img,
 svg {
   max-width: 100%;
   display: block;
+}
+
+b,
+strong {
+  font-weight: 700;
+  color: $white;
+}
+
+em {
+  color: $white;
+  font-style: italic;
 }

@@ -3,4 +3,14 @@
     background: $black !important;
     color: $white;
   }
+
+  &-white {
+    background: $white !important;
+    color: $black;
+  }
+
+  &-secondary {
+    background: $c-theme-secondary;
+    color: $white;
+  }
 }

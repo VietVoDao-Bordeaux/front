@@ -6,7 +6,7 @@
 
         <div class="pl-4 flex-grow-1">
             <p class="text-extra-big c-primary mb-1"><strong>{{ paragraph.fieldTitle }}</strong></p>
-            <p class="text-small">{{ paragraph.fieldDesc }}</p>
+            <p class="text-small" v-html="paragraph.fieldBody.processed"></p>
         </div>
     </div>
 </template>

@@ -1,5 +1,5 @@
 <template>
-    <header id="header" class="bg-dark">
+    <header id="header" class="bg-white">
         <div class="container">
             <div class="row justify-content-end">
                 <nav v-for="links in menuByName.links" :key="links.label" class="nav">
@@ -32,3 +32,10 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+    #header {
+        position: relative;
+        z-index: 100;
+    }
+</style>
