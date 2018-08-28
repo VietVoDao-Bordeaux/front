@@ -2,6 +2,10 @@ body {
   font-family: 'Montserrat', Arial, sans-serif;
   background: $c-background;
   color: $c-text;
+
+  @include mq($from: large) {
+    font-size: rem($large-base-fs);
+  }
 }
 
 img,
